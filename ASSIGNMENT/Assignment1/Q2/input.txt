@@ -1,0 +1,1 @@
+No fixed interactive input required. Run the program and capture the actual output.

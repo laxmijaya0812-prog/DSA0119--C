@@ -1,0 +1,12 @@
+g++ -std=c++17 -Wall -Wextra -pedantic Q2/tokens_constants.cpp -o Q2/tokens_constants.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q3/data_types.cpp -o Q3/data_types.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q4/predict.cpp -o Q4/predict.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q5/predict.cpp -o Q5/predict.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q6/fare_logic.cpp -o Q6/fare_logic.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q6/complete_code.cpp -o Q6/complete_code.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q7/procedural.cpp -o Q7/procedural.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q7/oop.cpp -o Q7/oop.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q8/safe_io.cpp -o Q8/safe_io.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q9/fare_system.cpp -o Q9/fare_system.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q10/compare.cpp -o Q10/compare.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q12/design_challenge.cpp -o Q12/design_challenge.exe
