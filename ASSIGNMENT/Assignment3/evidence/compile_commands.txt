@@ -1,0 +1,10 @@
+g++ -std=c++17 -Wall -Wextra -pedantic Q1/book.cpp -o Q1/book.exe
+g++ -std=c++17 -Wall -Wextra -pedantic -fsanitize=address Q2/prescription.cpp -o Q2/prescription_asan.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q3/auditorium.cpp -o Q3/auditorium.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q3/logger.cpp -o Q3/logger.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q4/money.cpp -o Q4/money.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q5/playlist.cpp -o Q5/playlist.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q5/counter.cpp -o Q5/counter.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q6/text.cpp -o Q6/text.exe
+g++ -std=c++17 -Wall -Wextra -pedantic -fsanitize=address Q6/text.cpp -o Q6/text_asan.exe
+g++ -std=c++17 -Wall -Wextra -pedantic Q7/complex_impedance.cpp -o Q7/complex_impedance.exe

@@ -1,0 +1,14 @@
+Predicted output before execution:
+
++ Constructed A
++ Constructed B
+- Destroyed B
+copyAcopy
+use
+- Destroyed Ac
+- Destroyed A
++ Constructed P
+- Destroyed P
+end
+
+Note: the exact copy/destruction formatting follows the supplied Logger implementation; compile and run to verify the actual output on the selected compiler.

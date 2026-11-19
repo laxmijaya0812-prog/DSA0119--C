@@ -1,0 +1,8 @@
+Predicted output:
+
+5 6 7
+
+Reason:
+- `c++` returns the old value (5) and then increments c to 6.
+- `++c` increments c from 6 to 7 and returns the updated object.
+- Therefore a.v = 5, b.v = 7, c.v = 7.
