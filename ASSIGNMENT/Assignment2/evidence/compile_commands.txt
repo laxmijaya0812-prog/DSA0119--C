@@ -1,0 +1,25 @@
+Q1:
+g++ -std=c++17 -Wall -Wextra Q1/call_modes.cpp -o q1
+g++ -std=c++17 -Wall -Wextra Q1/complete_code.cpp -o q1_complete
+
+Q2:
+g++ -std=c++17 -Wall -Wextra -Wreturn-local-addr Q2/return_reference.cpp -o q2
+g++ -std=c++17 -Wall -Wextra Q2/index_pointer_copy.cpp -o q2_safe
+
+Q3:
+g++ -std=c++17 -Wall -Wextra Q3/charge.cpp -o q3
+
+Q4:
+g++ -std=c++17 -Wall -Wextra Q4/savings_account.cpp -o q4
+
+Q5:
+g++ -std=c++17 -Wall -Wextra Q5/bus_ticket.cpp -o q5
+
+Q6:
+g++ -std=c++17 -Wall -Wextra Q6/time_friend.cpp -o q6
+g++ -std=c++17 -O0 -Wall -Wextra Q6/inline_timing.cpp -o q6_O0
+g++ -std=c++17 -O2 -Wall -Wextra Q6/inline_timing.cpp -o q6_O2
+
+Q7:
+g++ -std=c++17 -Wall -Wextra Q7/original_account.cpp -o q7_original
+g++ -std=c++17 -Wall -Wextra Q7/circular_account.cpp -o q7_circular
