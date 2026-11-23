@@ -1,9 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra -DVIRT= b1_runtime_binding.cpp -o prog
-$ ./prog 
-Through derived objects (static type known):
-  OP 1700   IP 47500
-Through Bill* pointers:
-  Bill 0
-  Bill 0
-Day total through Bill*: 0
-[exit code 0]

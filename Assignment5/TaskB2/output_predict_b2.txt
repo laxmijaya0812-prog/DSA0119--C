@@ -1,4 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra  predict_b2.cpp -o prog
-$ ./prog 
-ok done caught negative [log too large] caught too large 
-[exit code 0]

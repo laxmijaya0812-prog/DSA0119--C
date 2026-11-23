@@ -1,8 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address predict_a2_nonvirtual_dtor.cpp -o prog
-predict_a2_nonvirtual_dtor.cpp: In function 'int main()':
-predict_a2_nonvirtual_dtor.cpp:18:5: warning: deleting object of abstract class type 'Bill' which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
-   18 |     delete b;
-      |     ^~~~~~~~
-$ ./prog 
-500 ~Bill 
-[exit code 0]

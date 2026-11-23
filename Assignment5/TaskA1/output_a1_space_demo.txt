@@ -1,7 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra  a1_space_demo.cpp -o prog
-$ ./prog 
-virtual total = 87200, switch total = 87200  (agree)
-sizeof(OutPatient) = 24  sizeof(InPatient) = 32  sizeof(DayCare) = 16  sizeof(Emergency) = 32
-sizeof(TaggedBill) = 32 (same for every kind)
-sizeof(std::unique_ptr<Bill>) = 8 (one pointer per bill in the virtual design)
-[exit code 0]

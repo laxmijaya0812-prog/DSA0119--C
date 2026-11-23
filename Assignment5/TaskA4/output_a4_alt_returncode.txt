@@ -1,6 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra  a4_alt_returncode.cpp -o prog
-$ ./prog 
-return code: approved 40000   |   exception: approved 40000
-return code: claim exceeds cover   |   exception: claim exceeds cover
-return code: negative charge   |   exception: negative charge
-[exit code 0]

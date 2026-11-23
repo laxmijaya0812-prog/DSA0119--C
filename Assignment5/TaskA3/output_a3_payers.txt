@@ -1,8 +1,0 @@
-$ g++ -std=c++17 -Wall -Wextra  a3_payers.cpp -o prog
-$ ./prog 
-Covered amount per bill (OP, IP, DC, EM) and total for each payer:
-SelfPay          0.00      0.00      0.00      0.00  | total       0.00
-Insurance     1360.00  40000.00  24000.00   6400.00  | total   71760.00
-Government    1000.00  45000.00  25000.00   6000.00  | total   77000.00
-Corporate     1530.00  30000.00  27000.00   7200.00  | total   65730.00
-[exit code 0]
