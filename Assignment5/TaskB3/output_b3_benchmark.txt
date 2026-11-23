@@ -1,0 +1,16 @@
+$ g++ -std=c++17 -Wall -Wextra -O2 b3_benchmark.cpp -o prog
+$ ./prog 
+sizeof: virtual objects = 24/32/16/32 (+8-byte pointer in the vector), TBill = 32, std::variant = 32 (largest alternative 24 + tag)
+
+== bills in random order (mixed day) ==
+        n |  virtual ms  ns/bill | switch ms   ns/bill | variant ms  ns/bill | sums equal
+     1000 |      0.0029    2.86 |      0.0027    2.67 |      0.0027    2.72 | yes
+  1000000 |     12.0003   12.00 |     10.7306   10.73 |      9.1007    9.10 | yes
+ 10000000 |    122.7378   12.27 |     99.2659    9.93 |     90.9058    9.09 | yes
+
+== bills grouped by type (predictable branches) ==
+        n |  virtual ms  ns/bill | switch ms   ns/bill | variant ms  ns/bill | sums equal
+     1000 |      0.0027    2.65 |      0.0027    2.75 |      0.0028    2.78 | yes
+  1000000 |      3.3000    3.30 |      3.0033    3.00 |      2.8342    2.83 | yes
+ 10000000 |     51.8426    5.18 |     49.8759    4.99 |     46.8062    4.68 | yes
+[exit code 0]

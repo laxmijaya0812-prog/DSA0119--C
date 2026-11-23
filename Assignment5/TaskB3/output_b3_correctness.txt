@@ -1,0 +1,15 @@
+$ g++ -std=c++17 -Wall -Wextra  b3_correctness.cpp -o prog
+$ ./prog 
+ #  kind   hand     virtual   switch    variant   agree
+ 1  OP       1700      1700      1700      1700   yes
+ 2  IP      47500     47500     47500     47500   yes
+ 3  DC      30000     30000     30000     30000   yes
+ 4  EM       8000      8000      8000      8000   yes
+ 5  OP        800       800       800       800   yes
+ 6  IP      15000     15000     15000     15000   yes
+ 7  DC      18000     18000     18000     18000   yes
+ 8  EM       5000      5000      5000      5000   yes
+ 9  OP       4800      4800      4800      4800   yes
+10  IP     128000    128000    128000    128000   yes
+    total  258800    258800    258800    258800   ALL AGREE
+[exit code 0]

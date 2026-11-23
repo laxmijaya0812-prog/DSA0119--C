@@ -1,0 +1,6 @@
+$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address a5_alt_manual_delete.cpp -o prog
+$ ./prog 
+  mode 0: ok
+  mode 1: runtime_error handled
+  mode 2: escaped to main: index
+[exit code 0]

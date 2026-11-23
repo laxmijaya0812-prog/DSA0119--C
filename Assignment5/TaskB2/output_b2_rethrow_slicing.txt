@@ -1,0 +1,7 @@
+$ g++ -std=c++17 -Wall -Wextra  b2_rethrow_slicing.cpp -o prog
+$ ./prog 
+A  catch(const ClaimError&)       + throw;  : main caught ClaimError      what()="exceeds cover"  copies made=0
+B  catch(const ClaimError& e)     + throw e;: main caught ClaimError      what()="exceeds cover"  copies made=1
+C  catch(const std::exception& e) + throw e;: main caught std::exception  what()="std::exception"  (type and message lost)
+D  catch(const std::exception&)   + throw;  : main caught ClaimError      what()="exceeds cover"  copies made=0
+[exit code 0]

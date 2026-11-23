@@ -1,0 +1,34 @@
+Pseudocode (design level, not C++). Keywords in capitals; "<-" is assignment, "->" is member access through a pointer.
+
+Algorithm A1.3 - DayTotal
+
+ALGORITHM DayTotal(bills, n)
+INPUT  : bills[0..n-1], array of pointers to Bill (any mix of
+         the four kinds); n, the number of bills
+OUTPUT : sum, the total of all bills of the day
+BEGIN
+ 1.  sum <- 0
+ 2.  FOR i <- 0 TO n - 1 DO
+ 3.      sum <- sum + bills[i]->total()   // late binding
+ 4.  END FOR
+ 5.  RETURN sum
+END
+
+Algorithm A1.4 - DayTotalSwitch (alternative concept)
+
+ALGORITHM DayTotalSwitch(bills, n)
+INPUT  : bills[0..n-1], array of Bill records with a field kind
+OUTPUT : sum, the total of all bills of the day
+BEGIN
+ 1.  sum <- 0
+ 2.  FOR i <- 0 TO n - 1 DO
+ 3.      SWITCH bills[i].kind
+ 4.        CASE OP : amount <- a + b
+ 5.        CASE IP : amount <- a * b + c
+ 6.        CASE DC : amount <- a
+ 7.        CASE EM : amount <- a + b * c
+ 8.      END SWITCH      // a, b, c are fields of bills[i]
+ 9.      sum <- sum + amount
+10.  END FOR
+11.  RETURN sum
+END
