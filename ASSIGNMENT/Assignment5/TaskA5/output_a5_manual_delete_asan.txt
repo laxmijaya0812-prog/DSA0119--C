@@ -1,0 +1,16 @@
+$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address -DMANUAL_DELETE a5_alt_manual_delete.cpp -o prog
+$ ./prog 
+
+=================================================================
+==500==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7fd7238fe6c8 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:98
+    #1 0x56328e95f3a6 in process(int) TaskA5/a5_alt_manual_delete.cpp:12
+    #2 0x56328e95f591 in main TaskA5/a5_alt_manual_delete.cpp:45
+    #3 0x7fd72302a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8cebda42d140fc2b09639f8b13a5d5f2e617ef09)
+    #4 0x7fd72302a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8cebda42d140fc2b09639f8b13a5d5f2e617ef09)
+    #5 0x56328e95f2c4 in _start (/tmp/tmp.XXXXXXXXXX/prog+0x22c4) (BuildId: b9e6e81e078c2b78aa760b7cb7b69e43ba1129d4)
+
+SUMMARY: AddressSanitizer: 800 byte(s) leaked in 1 allocation(s).
+[exit code 1]

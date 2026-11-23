@@ -1,0 +1,4 @@
+$ g++ -std=c++17 -Wall -Wextra  predict_a2.cpp -o prog
+$ ./prog 
+500 ~OPBill ~Bill 
+[exit code 0]

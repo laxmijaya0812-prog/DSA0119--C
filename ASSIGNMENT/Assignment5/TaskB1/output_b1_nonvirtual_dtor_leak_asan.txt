@@ -1,0 +1,26 @@
+$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address -DVDTOR= b1_virtual_dtor.cpp -o prog
+b1_virtual_dtor.cpp: In function 'int main()':
+b1_virtual_dtor.cpp:39:5: warning: deleting object of abstract class type 'Bill' which has non-virtual destructor will cause undefined behavior [-Wdelete-non-virtual-dtor]
+   39 |     delete b;
+      |     ^~~~~~~~
+$ ASAN_OPTIONS=new_delete_type_mismatch=0 ./prog 
+
+=================================================================
+==578==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 800 byte(s) in 1 object(s) allocated from:
+    #0 0x7f42fc4fe548 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:95
+    #1 0x55fee3e3eec5 in std::__new_allocator<double>::allocate(unsigned long, void const*) /usr/include/c++/13/bits/new_allocator.h:151
+    #2 0x55fee3e3edae in std::allocator_traits<std::allocator<double> >::allocate(std::allocator<double>&, unsigned long) /usr/include/c++/13/bits/alloc_traits.h:482
+    #3 0x55fee3e3edae in std::_Vector_base<double, std::allocator<double> >::_M_allocate(unsigned long) /usr/include/c++/13/bits/stl_vector.h:381
+    #4 0x55fee3e3eb2e in std::_Vector_base<double, std::allocator<double> >::_M_create_storage(unsigned long) /usr/include/c++/13/bits/stl_vector.h:398
+    #5 0x55fee3e3e78a in std::_Vector_base<double, std::allocator<double> >::_Vector_base(unsigned long, std::allocator<double> const&) /usr/include/c++/13/bits/stl_vector.h:335
+    #6 0x55fee3e3e072 in std::vector<double, std::allocator<double> >::vector(unsigned long, double const&, std::allocator<double> const&) /usr/include/c++/13/bits/stl_vector.h:571
+    #7 0x55fee3e3dcfb in InPatient::InPatient(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, double) TaskB1/b1_virtual_dtor.cpp:24
+    #8 0x55fee3e3d73a in main TaskB1/b1_virtual_dtor.cpp:36
+    #9 0x7f42fbc2a1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 8cebda42d140fc2b09639f8b13a5d5f2e617ef09)
+    #10 0x7f42fbc2a28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 8cebda42d140fc2b09639f8b13a5d5f2e617ef09)
+    #11 0x55fee3e3d524 in _start (/tmp/tmp.XXXXXXXXXX/prog+0x2524) (BuildId: f74cbb4d59ee3f33fd8d15517afbf8c8ab473a56)
+
+SUMMARY: AddressSanitizer: 800 byte(s) leaked in 1 allocation(s).
+[exit code 1]

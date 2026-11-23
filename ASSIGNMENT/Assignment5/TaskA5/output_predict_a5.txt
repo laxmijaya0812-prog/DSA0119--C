@@ -1,0 +1,4 @@
+$ g++ -std=c++17 -Wall -Wextra  predict_a5.cpp -o prog
+$ ./prog 
+~f ~main caught 42
+[exit code 0]

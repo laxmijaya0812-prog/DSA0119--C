@@ -1,0 +1,9 @@
+$ g++ -std=c++17 -Wall -Wextra -O2 a2_alt_dynamic_cast.cpp -o prog
+$ ./prog 
+bills: 1000000 (random mix of k = 4 kinds)
+virtual call            : 14.7645 ms  (14.7645 ns/bill)
+dynamic_cast chain      : 43.2546 ms  (43.2546 ns/bill)
+slowdown                : 2.92963 x
+totals equal            : yes
+sizeof(polymorphic OP) = 24 (includes the 8-byte vtable pointer; payload = 16)
+[exit code 0]

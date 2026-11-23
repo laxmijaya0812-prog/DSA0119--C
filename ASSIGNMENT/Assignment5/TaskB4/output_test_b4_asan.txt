@@ -1,0 +1,29 @@
+$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address test_b4.cpp -o prog
+$ ./prog 
+--- new bill type (MT) with every payer ---
+PASS  MT total                                        41000.00  (hand 41000.00)
+PASS  MT covered by SelfPay                               0.00  (hand 0.00)
+PASS  MT covered by Insurance (80 % of 41000)         32800.00  (hand 32800.00)
+PASS  MT covered by Government (package 30000)        30000.00  (hand 30000.00)
+PASS  MT covered by Corporate (90 % = 36900, cap 30000)  30000.00  (hand 30000.00)
+--- new payer (Corporate) with the old bill types ---
+PASS  OP covered by Corporate (90 % of 1700)           1530.00  (hand 1530.00)
+PASS  IP covered by Corporate (cap)                   30000.00  (hand 30000.00)
+PASS  DC covered by Corporate (90 % of 30000)         27000.00  (hand 27000.00)
+PASS  EM covered by Corporate (90 % of 8000)           7200.00  (hand 7200.00)
+--- one day book holding old and new bill types ---
+PASS  day total (89700 old + 41000 new)              130700.00  (hand 130700.00)
+--- error paths with the new classes ---
+PASS  negative extra-day charge               BillingError: extra-day charge must not be negative (got -3000.00)
+PASS  negative days                           BillingError: extra days must not be negative
+PASS  MT unknown to old government table      ClaimError: unknown package code 'MT-DEL'
+PASS  MT above insurance cover                ClaimError: claim of 41000.00 exceeds policy cover of 1000.00
+PASS  missing patient record                  BillingError: no patient record for 'Stranger'
+PASS  invalid corporate percentage            BillingError: coverage percentage must be 0..100
+PASS  overflowing array request               bad_alloc: std::bad_array_new_length
+PASS  non-std exception                       unknown exception type
+PASS  fallback keeps the bill (patient pays all)      41000.00  (hand 41000.00)
+[audit] MT Lakshmi via Insurance: claim of 41000.00 exceeds policy cover of 1000.00
+[recovery] claim rejected (claim of 41000.00 exceeds policy cover of 1000.00); patient billed in full
+ALL TESTS PASSED
+[exit code 0]

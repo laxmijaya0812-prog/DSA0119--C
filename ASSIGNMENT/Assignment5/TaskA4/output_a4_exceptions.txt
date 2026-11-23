@@ -1,0 +1,19 @@
+$ g++ -std=c++17 -Wall -Wextra  a4_exceptions.cpp -o prog
+$ ./prog 
+--- A4.1 every error in the case study, thrown and caught as std::exception ---
+negative charge           hosp::NegativeChargeError    ClaimError:no  BillingError:yes what(): consultation fee must not be negative (got -500.00)
+claim above cover         hosp::ClaimExceedsCoverError ClaimError:yes BillingError:yes what(): claim of 50000.00 exceeds policy cover of 1000.00
+unknown package           hosp::UnknownPackageError    ClaimError:yes BillingError:yes what(): unknown package code 'DC-UNKNOWN'
+missing patient record    hosp::PatientRecordError     ClaimError:no  BillingError:yes what(): no patient record for 'Nobody'
+text instead of number    std::invalid_argument        ClaimError:no  BillingError:no  what(): stod
+allocation failure        std::bad_array_new_length    ClaimError:no  BillingError:no  what(): std::bad_array_new_length
+
+--- A4.2 exception specifications (compile-time checks) ---
+Bill::total() is noexcept                      : true
+Bill::type() is noexcept                       : true
+Bill destructor is noexcept                    : true
+Payer destructor is noexcept                   : true
+BillingError copy-constructor is noexcept      : true
+OutPatientBill constructor is noexcept         : false  (validates, so it may throw)
+Payer::amountCovered() is noexcept             : false  (may throw ClaimError)
+[exit code 0]

@@ -1,0 +1,9 @@
+$ g++ -std=c++17 -Wall -Wextra -g -fsanitize=address -DVDTOR=virtual b1_virtual_dtor.cpp -o prog
+$ ./prog 
+sizeof(Bill) = 40, sizeof(InPatient) = 80
+total = 7500
+deleting through Bill*:
+  ~InPatient (frees 800 heap bytes)
+  ~Bill
+done
+[exit code 0]

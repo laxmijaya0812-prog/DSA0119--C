@@ -1,0 +1,7 @@
+$ g++ -std=c++17 -Wall -Wextra -O2 b3_exception_cost.cpp -o prog
+$ ./prog 
+invalid%  invalid bills | return codes ms | exceptions ms | exceptions/codes | extra us per thrown exception
+      0%              0 |          2.379 |         2.658 |            1.1x |               n/a
+      1%          10090 |          2.109 |        16.706 |            7.9x |              1.45
+     50%         500429 |          6.790 |       879.563 |          129.5x |              1.74
+[exit code 0]

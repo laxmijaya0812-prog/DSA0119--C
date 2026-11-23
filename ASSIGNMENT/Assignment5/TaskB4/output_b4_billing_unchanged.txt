@@ -1,0 +1,3 @@
+billing.hpp is identical to TaskB1/billing.hpp
+6aa65342eee650fb66d3a84257672b5b9369e47601eccc993fc01c2b7d53d811  billing.hpp
+6aa65342eee650fb66d3a84257672b5b9369e47601eccc993fc01c2b7d53d811  ../TaskB1/billing.hpp
